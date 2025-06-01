@@ -3,15 +3,16 @@ import axios from "axios";
 import { useSearchContext } from "./store/search-context";
 import Pagiation from "./Pagiation";
 
-const url = `https://api.unsplash.com/search/photos?query=animals&client_id=${
-  import.meta.env.VITE_API_KEY
-}`;
-
 const Gallery = () => {
   const { searchTerm, page } = useSearchContext();
-  console.log(page);
 
-  const searchUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&page=${page}&client_id=SUvn01G3U_D_S3kmIFQzX07PW6rm4Df1YXqQwfWjJ1U`;
+  const url = `https://api.unsplash.com/search/photos?page=${page}&query=animals&client_id=${
+    import.meta.env.VITE_API_KEY
+  }`;
+
+  const searchUrl = `https://api.unsplash.com/search/photos?query=${searchTerm}&page=${page}&client_id=${
+    import.meta.env.VITE_API_KEY
+  }`;
 
   const urlToUse = searchTerm ? searchUrl : url;
   const { data, isLoading, error, isError } = useQuery({
