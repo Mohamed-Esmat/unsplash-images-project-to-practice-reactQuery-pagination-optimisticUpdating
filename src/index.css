@@ -444,6 +444,7 @@ Pagination
 
 .pagination {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;

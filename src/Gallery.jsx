@@ -56,10 +56,12 @@ const Gallery = () => {
   }
 
   return (
-    <section className="image-container">
-      {content}
-      <Pagiation totalPages={data ? data.total_pages : 0} />
-    </section>
+    <>
+      <section className="image-container">{content}</section>
+      <section>
+        <Pagiation totalPages={data ? data.total_pages : 0} />
+      </section>
+    </>
   );
 };
 
